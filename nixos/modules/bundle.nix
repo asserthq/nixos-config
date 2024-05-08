@@ -7,7 +7,7 @@
     ./user.nix
     ./libinput.nix
     ./xserver.nix
-    # ./xdg.nix
+    ./xdg.nix
     ./nm.nix
     ./hyprland.nix
     # ./trim.nix
