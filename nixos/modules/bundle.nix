@@ -2,14 +2,15 @@
   imports = [
     ./bootloader.nix
     ./nvidia.nix
-    ./sound.nix
+    # ./sound.nix
     ./env.nix
     ./user.nix
+    ./libinput.nix
     ./xserver.nix
-    ./xdg.nix
+    # ./xdg.nix
     ./nm.nix
     ./hyprland.nix
-    ./trim.nix
-    ./bluetooth.nix
+    # ./trim.nix
+    # ./bluetooth.nix
   ];
 }
