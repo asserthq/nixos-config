@@ -1,0 +1,15 @@
+{
+  imports = [
+    ./bootloader.nix
+    ./nvidia.nix
+    ./sound.nix
+    ./env.nix
+    ./user.nix
+    ./xserver.nix
+    ./xdg.nix
+    ./nm.nix
+    ./hyprland.nix
+    ./trim.nix
+    ./bluetooth.nix
+  ];
+}
