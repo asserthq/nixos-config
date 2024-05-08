@@ -7,8 +7,6 @@
     extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-
   # ^^^^
 
   # Enable OpenGL
