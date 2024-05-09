@@ -110,24 +110,19 @@
         "float, ^(mpv)$"
       ];
 
-     # exec-once = [
-     #   "waybar"
+      exec-once = [
+        "waybar"
      #   "wl-paste --type text --watch cliphist store"
      #   "wl-paste --type image --watch cliphist store"
-     # ];
+      ];
 
       bind = [
-        "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
         "$mainMod, T, exec, alacritty"
         "$mainMod, K, exec, kitty"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
-        "$mainMod, E, exec, dolphin"
         "$mainMod, F, togglefloating,"
-        "$mainMod, D, exec, wofi --show drun"
-        "$mainMod, P, pseudo, # dwindle"
-        "$mainMod, J, togglesplit, # dwindle"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left,  movefocus, l"
@@ -199,9 +194,6 @@
         # Waybar
         "$mainMod, B, exec, pkill -SIGUSR1 waybar"
         "$mainMod, W, exec, pkill -SIGUSR2 waybar"
-
-        # Disable all effects
-        "$mainMod Shift, G, exec, ~/.config/hypr/gamemode.sh "
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
