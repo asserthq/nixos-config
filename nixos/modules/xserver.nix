@@ -5,7 +5,7 @@
       enable = true;
       wayland = true;
     };
-    desktopManager.gnome.enable = true;
+    # desktopManager.gnome.enable = true;
     # windowManager.herbstluftwm.enable = true;
 
     # displayManager = {
