@@ -24,6 +24,7 @@
     xdg-utils
     xdg-desktop-portal
     xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
 
     # Xorg stuff
     #xterm
@@ -40,7 +41,6 @@
     hyprland
     hyprpicker
     hyprland-protocols
-    xdg-desktop-portal-hyprland
     hyprpaper
     waybar
 
