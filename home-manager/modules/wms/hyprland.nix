@@ -110,11 +110,11 @@
         "float, ^(mpv)$"
       ];
 
-    #exec-once = [
-      #"waybar"
-     #   "wl-paste --type text --watch cliphist store"
-     #   "wl-paste --type image --watch cliphist store"
-    #];
+      exec-once = [
+        "waybar"
+        #"wl-paste --type text --watch cliphist store"
+        #"wl-paste --type image --watch cliphist store"
+      ];
 
       bind = [
 
