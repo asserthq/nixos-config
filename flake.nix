@@ -10,11 +10,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };    
   };
 
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, hyprland, ... }@inputs:
@@ -41,7 +36,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [ 
         ./home-manager/home.nix 
-        hyprland.homeManagerModules.default
       ];
     };
   };
