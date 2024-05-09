@@ -40,6 +40,9 @@
       modules = [ 
         ./home-manager/home.nix 
       ];
+      extraSpecialArgs = {
+        inherit unstable
+      };
     };
   };
 }
