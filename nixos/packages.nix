@@ -22,6 +22,8 @@
 
     # XDG stuff
     xdg-utils
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
 
     # Xorg stuff
