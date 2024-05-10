@@ -39,6 +39,7 @@
 
     # WMs and stuff
     hyprland
+    hypridle
     hyprlock
     hyprpicker
     hyprland-protocols

@@ -10,6 +10,7 @@
     ./xdg.nix
     ./nm.nix
     ./hyprland.nix
+    #./hypridle.nix
     ./hyprlock.nix
     # ./trim.nix
     # ./bluetooth.nix
