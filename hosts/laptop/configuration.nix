@@ -83,19 +83,22 @@
     enable = true;
     xwayland.enable = true;
   };
-
+  
   # services.gnome.gnome-keyring.enable = true;
   # security.pam.services.sddm.enableGnomeKeyring = true;
 
+  programs.fish.enable = true;
+  
+  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
-    neovim
+    helix
     git
     wl-clipboard
-    kitty
+    starship
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
