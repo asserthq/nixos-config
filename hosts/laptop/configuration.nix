@@ -66,18 +66,16 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  services.displayManager = {
-    sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
-    autoLogin = {
-      enable = true;
-      user = "sanya";
-    };
-  };
-
-  services.getty.autologinUser = "sanya";
+  # services.displayManager = {
+  #   sddm = {
+  #     enable = true;
+  #     wayland.enable = true;
+  #   };
+  #   autoLogin = {
+  #     enable = true;
+  #     user = "sanya";
+  #   };
+  # };
 
   programs.hyprland = {
     enable = true;
@@ -98,7 +96,6 @@
     helix
     git
     wl-clipboard
-    starship
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
