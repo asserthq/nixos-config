@@ -1,0 +1,3 @@
+{
+  imports = [./sanya.nix];
+}
