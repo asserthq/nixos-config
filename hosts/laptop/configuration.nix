@@ -115,6 +115,8 @@
     allowSFTP = true;
   };
 
+  services.v2raya.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

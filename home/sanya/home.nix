@@ -29,10 +29,13 @@
     cowsay
     neofetch
     hyprpaper
-    # wofi
-    hyprlauncher
+    wofi
+    # hyprlauncher
     waybar
-    # dolphin
+    brave
+    firefox
+    telegram-desktop
+    
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
