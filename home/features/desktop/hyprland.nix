@@ -20,7 +20,7 @@ in {
         ];
 
         exec-once = [
-          "waybar"
+          # "waybar"
           "hyprpaper"
           "hypridle"
           # "wl-paste -p -t text --watch clipman store -P --histpath=\"~/.local/share/clipman-primary.json\""

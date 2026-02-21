@@ -58,5 +58,12 @@
       ((lib.filterAttrs (_: lib.isType "flake")) inputs);
     nixPath = ["/etc/nix/path"];
   };
+  
   users.defaultUserShell = pkgs.fish;
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
+  ];
+  
 }
