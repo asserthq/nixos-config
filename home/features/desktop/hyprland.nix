@@ -20,7 +20,7 @@ in {
         ];
 
         exec-once = [
-          # "waybar"
+          "ironbar"
           "hyprpaper"
           "hypridle"
           # "wl-paste -p -t text --watch clipman store -P --histpath=\"~/.local/share/clipman-primary.json\""
@@ -155,6 +155,8 @@ in {
     };
     
     home.packages = with pkgs; [
+      ironbar
+      wofi
       hypridle
       hyprpaper
       hyprlock
