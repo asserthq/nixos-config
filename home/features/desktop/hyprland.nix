@@ -11,9 +11,9 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
-        # xwayland = {
-        #   force_zero_scaling = true;
-        # };
+        xwayland = {
+          force_zero_scaling = true;
+        };
 
         monitor = [
           ",preferred,auto,auto"
@@ -59,7 +59,7 @@ in {
         # };
         
         decoration = {
-          rounding = 0;
+          rounding = 3;
           blur = {
             enabled = true;
             # size = 3;
@@ -93,13 +93,13 @@ in {
           "$mod, return, exec, kitty"
           "$mod, T, exec, kitty"
           # "$mod SHIFT, e, exec, kitty -e zellij_nvim"
-          "$mod, o, exec, thunar"
           "$mod, Escape, exec, wlogout -p layer-shell"
           "$mod, Space, togglefloating"
           "$mod, Q, killactive"
           "$mod, M, exit"
           "$mod, F, fullscreen"
-          "$mod, D, exec, wofi --show drun --allow-images"
+          # "$mod, D, exec, wofi --show drun --allow-images"
+          "$mod, D, exec, fuzzel"
           # "$mod, P, exec, wofi-pass"
           # "$mod SHIFT, P, pseudo"
 
@@ -156,6 +156,7 @@ in {
     
     home.packages = with pkgs; [
       ironbar
+      fuzzel
       wofi
       hypridle
       hyprpaper
