@@ -13,12 +13,23 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
     grub2-themes.url = "github:vinceliuice/grub2-themes";
-    anyrun.url = "github:anyrun-org/anyrun";
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -26,33 +37,28 @@
     home-manager,
     nixpkgs,
     ...
-  } @ inputs: let
-    inherit (self) outputs;
-    systems = [
-      "aarch64-linux"
-      "i686-linux"
-      "x86_64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
-    ];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
-  in {
-    packages =
-      forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-    overlays = import ./overlays {inherit inputs;};
+  } @ inputs: {
+    
+    # overlays = import ./overlays {inherit inputs;};
+
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./hosts/laptop
           inputs.grub2-themes.nixosModules.default
         ];
       };
     };
+
     homeConfigurations = {
       "sanya@laptop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        extraSpecialArgs = {inherit inputs outputs;};
+        pkgs = import nixpkgs { hostPlatform = "x86_64-linux"; };
+        extraSpecialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./home/sanya/laptop.nix
         ];

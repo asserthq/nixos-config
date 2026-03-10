@@ -26,13 +26,16 @@
   home.packages = with pkgs; [
     helix
     kitty
+    alacritty
     cowsay
     neofetch
     brave
     firefox
     git
 
+    waylock
     fuzzel
+    ironbar
     # anyrun
 
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -53,6 +56,27 @@
     # '')
   ];
 
+  
+  programs.vscode = {
+    enable = true;
+    # extensions = with pkgs.vscode-extensions; [
+    #   dracula-theme.theme-dracula
+    #   vscodevim.vim
+    #   yzhang.markdown-all-in-one
+    # ];
+  };
+
+  # programs.ssh = {
+  #   enable = true;
+  #   addKeysToAgent = "yes";
+  #   matchBlocks = {
+  #     "github.com" = {
+  #       user = "git";
+  #       identityFile = [ "~/.ssh/id_ed25519" ];
+  #     };
+  #   };
+  # };
+  
   # programs.anyrun.enable = true;
   
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

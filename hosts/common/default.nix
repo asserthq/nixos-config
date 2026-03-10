@@ -9,19 +9,20 @@
   imports = [
     ./users
     inputs.home-manager.nixosModules.home-manager
+    ./nix.nix
+    # ./fonts.nix
   ];
   home-manager = {
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs outputs;};
-    backupFileExtension = "backup";
   };
   nixpkgs = {
     # You can add overlays here
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.additions
-      outputs.overlays.modifications
-      outputs.overlays.stable-packages
+      # outputs.overlays.additions
+      # outputs.overlays.modifications
+      # outputs.overlays.stable-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -40,30 +41,6 @@
     };
   };
 
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      trusted-users = [
-        "root"
-        "sanya"
-      ]; # Set users that are allowed to use the flake command
-    };
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 30d";
-    };
-    optimise.automatic = true;
-    registry =
-      (lib.mapAttrs (_: flake: {inherit flake;}))
-      ((lib.filterAttrs (_: lib.isType "flake")) inputs);
-    nixPath = ["/etc/nix/path"];
-  };
   
   users.defaultUserShell = pkgs.fish;
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.symbols-only
-  ];
-  
 }

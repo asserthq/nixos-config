@@ -12,21 +12,12 @@ in {
       loginShellInit = ''
         set -x NIX_PATH nixpkgs=channel:nixos-unstable
         set -x NIX_LOG info
-        set -x TERMINAL kitty
-
-        if test (tty) = "/dev/tty1"
-          exec start-hyprland &> /dev/null
-        end
+        set -x TERMINAL alacritty
       '';
-      # interactiveShellInit = ''
-      #   set -x NIX_PATH nixpkgs=channel:nixos-unstable
-      #   set -x NIX_LOG info
-      #   set -x TERMINAL kitty
 
-      #   if test (tty) = "/dev/tty1"
-      #     exec start-hyprland &> /dev/null
-      #   end
-      # '';
+    
+    #      exec start-hyprland &> /dev/null
+
       shellAbbrs = {
         ".." = "cd ..";
         "..." = "cd ../..";
