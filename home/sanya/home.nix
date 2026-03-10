@@ -56,6 +56,9 @@
     # '')
   ];
 
+  imports = [inputs.walker.homeManagerModules.default];
+
+  programs.walker.enable = true;
   
   programs.vscode = {
     enable = true;
