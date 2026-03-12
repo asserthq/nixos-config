@@ -36,6 +36,10 @@
     waylock
     fuzzel
     ironbar
+
+    code-cursor
+
+    #gui-for-singbox
     # anyrun
 
     # # Adds the 'hello' command to your environment. It prints a friendly

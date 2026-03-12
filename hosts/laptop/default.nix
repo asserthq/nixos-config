@@ -62,6 +62,22 @@
     variant = "";
   };
 
+  services.v2raya.enable = true;
+  # services.v2raya.package = pkgs.v2raya.override { core = pkgs.xray; };
+  networking.firewall.allowedTCPPorts = [ 2017 ];
+  boot.kernelModules = [ "tun" "nft_tproxy" ];
+  networking.nftables.enable = true;
+
+  programs.throne = {
+    enable = true;
+    tunMode.enable = true;
+  };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -84,16 +100,20 @@
   services.greetd = {
     enable = true;
     settings = {
-      initial_session = {
-        command = "niri-session";
-        user = "sanya";
-      };
+      # initial_session = {
+      #   command = "niri-session";
+      #   user = "sanya";
+      # };
       default_session = {
         command = "${pkgs.tuigreet}/bin/tuigreet --cmd niri-session";
         user = "greeter";
       };
     };
   };
+  
+  # systemd.services.greetd.serviceConfig = {
+  #   Type = 
+  # };
 
   programs.fish.enable = true;
   
@@ -101,11 +121,25 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    xray
+    v2raya
+    throne
+
+    # xcb-util-cursor
+    # qt6.qtwayland
+    # libsForQt5.qt5.qtwayland
+
+    # gui-for-singbox
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     # helix
     # git
   ];
+
+  # environment.variables = {
+  #   QT_QPA_PLATFORM = "wayland;xcb";
+  #   DISABLE_QT_TERMINAL_BLEACH = "1";
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
